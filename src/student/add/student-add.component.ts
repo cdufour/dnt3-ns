@@ -9,7 +9,8 @@ import { RouterExtensions } from "nativescript-angular/router";
 })
 export class StudentAddComponent {
     newStudent: Student = {firstname: '', lastname: '', grades: []};
-
+    newGrade: string = '';
+    
     constructor(
         private studentService: StudentService,
         private router: RouterExtensions
@@ -19,6 +20,11 @@ export class StudentAddComponent {
         this.studentService.addStudent(this.newStudent);
         // console.log(this.studentService.getStudents());
         this.router.navigateByUrl('/students');
+    }
+
+    addGrade() {
+        this.newStudent.grades.push(parseInt(this.newGrade));
+        this.newGrade = ''; // clear input
     }
 
 }

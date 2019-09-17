@@ -1,5 +1,15 @@
 <StackLayout>
     <TextField hint="Prénom" [(ngModel)]="newStudent.firstname"></TextField>
     <TextField hint="Nom" [(ngModel)]="newStudent.lastname"></TextField>
+
+    <Label text="Notes obtenues" class="h2"></Label>
+
+    <StackLayout orientation="horizontal">
+        <TextField hint="Note" [(ngModel)]="newGrade"></TextField>
+        <Button (tap)="addGrade()" text="+" fontSize="20"></Button>
+        <Label [text]="newStudent.grades.join(', ')"></Label>
+    </StackLayout>
+    
+
     <Button text="Enregistrer" (tap)="saveStudent()"></Button>
 </StackLayout>
