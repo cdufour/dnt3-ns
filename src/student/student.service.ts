@@ -15,9 +15,16 @@ export class StudentService {
         return this.students;
     }
 
-    studentGradesAvg(notes: number[]) {
+    studentGradesAvg(notes: number[]): string {
         let sum: number = 0;
         notes.forEach(note => sum += note);
+        if (notes.length == 0) {
+            return 'Aucune note';
+        }
         return (sum / notes.length).toFixed(2);
+    }
+
+    addStudent(student: Student) {
+        this.students.push(student);
     }
 }

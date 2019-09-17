@@ -1,0 +1,5 @@
+<StackLayout>
+    <TextField hint="Prénom" [(ngModel)]="newStudent.firstname"></TextField>
+    <TextField hint="Nom" [(ngModel)]="newStudent.lastname"></TextField>
+    <Button text="Enregistrer" (tap)="saveStudent()"></Button>
+</StackLayout>
